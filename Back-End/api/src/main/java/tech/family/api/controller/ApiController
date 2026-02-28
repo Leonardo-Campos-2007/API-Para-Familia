@@ -1,4 +1,4 @@
-package tech.buildrun.api.controller;
+package tech.family.api.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
