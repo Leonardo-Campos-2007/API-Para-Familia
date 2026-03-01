@@ -6,18 +6,23 @@ import java.sql.SQLException;
 
 public class Conexao {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/family";
-    private static final String USER = "";
-    private static final String PASSWORD = "";
+    private static final String URL =
+            "jdbc:mysql://localhost:3306/family?serverTimezone=UTC&useSSL=false";
 
-    public static Connection getConnection() throws SQLException {
+    private static final String USER = "";      // ajuste se necessário
+    private static final String PASSWORD = "";     // ajuste se necessário
 
+    private Conexao() {
+        // Evita instanciamento da classe (boa prática)
+    }
+
+    public static Connection getConnection() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException("Driver do MySQL não encontrado.", e);
+            Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            System.out.println("Conexão estabelecida com sucesso!");
+            return connection;
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao conectar ao banco de dados.", e);
         }
-
-        return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 }

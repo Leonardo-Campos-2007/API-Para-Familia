@@ -7,8 +7,8 @@ public class Index {
 
     public static void main(String[] args) {
         Usuario usuario = new Usuario();
-        usuario.setId(1);
-        usuario.setNome("João");
+        usuario.setId(3);
+        usuario.setNome("Caze");
         
         new UsuarioDAO().cadastrarUsuario(usuario);
     }
