@@ -12,6 +12,7 @@ public class UsuarioDAO {
     public void cadastrarUsuario(Usuario usuario) {
 
         String sql = "INSERT INTO usuarios (id, nome) VALUES (?, ?)";
+        
 
         try {
 
