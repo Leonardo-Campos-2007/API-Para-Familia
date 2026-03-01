@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import tech.family.api.model.Usuario;
 import tech.family.api.Conexao;
 
+
 public class UsuarioDAO {
 
     public void cadastrarUsuario(Usuario usuario) {
